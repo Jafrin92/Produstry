@@ -1,3 +1,13 @@
+//preloader
+//   var loader=document.getElementById("preloader");
+//   window.addEventListener("load", function(){
+//     loader.style.display="none";
+// })
+var preloader= document.getElementById("preloader");
+function myfunction(){
+  preloader.style.display="none";
+}
+
 $(function($){
     "use strict";
     //Menu js
@@ -160,6 +170,7 @@ $(function($){
         centerPadding: '0px',
         asNavFor:".testimonial_text_slider",
       });
+
 //brand js
       $('.brand_slick').slick({
         infinite: true,
@@ -168,7 +179,7 @@ $(function($){
         prevArrow: '<i class="fa-solid banner_arrow_left fa-angle-left"></i>',
         nextArrow: '<i class="fa-solid banner_arrow_right fa-angle-right"></i>',
         dots: false,
-        speed: 300,
+        speed: 3000,
         slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
@@ -201,12 +212,41 @@ $(function($){
     });
 });
 
-//preloader
-//   var loader=document.getElementById("preloader");
-//   window.addEventListener("load", function(){
-//     loader.style.display="none";
-// })
-  var preloader= document.getElementById("preloader");
-  function myfunction(){
-    preloader.style.display="none";
-  }
+//about page
+//team slider
+$('.team_slider').slick({
+  infinite: true,
+  arrows: true,
+  prevArrow: '<i class="fa-solid banner_arrow_left fa-angle-left"></i>',
+  nextArrow: '<i class="fa-solid banner_arrow_right fa-angle-right"></i>',
+  speed: 300,
+  centerMode: true,
+  centerPadding: '0',
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
+});
+		

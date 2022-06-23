@@ -19,9 +19,12 @@ ____Home Page____
 10. Brand part
 11. Footer
 12. End Footer
-13. Scroll
 
 ____About Us_____
+1. About Banner part.
+2. About Produstry part.
+3. Our Mission part.
+4. Our Team part.
 */
 *{
     margin: 0;
@@ -75,6 +78,17 @@ p{
     padding: 15px 20px;
 }
 
+/* preloader css start */
+#preloader{
+    background: #fff url(../Images/preloader.gif) no-repeat center center;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+/* preloader css end */
+
 /* slider arrows */
 .banner_arrow_left,
 .banner_arrow_right{
@@ -90,6 +104,11 @@ p{
     top: 50%;
     transform: translateY(-50%);
     z-index: 99;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
 }
 .banner_arrow_left{
     left: 0;
@@ -105,6 +124,26 @@ p{
     border-color: var(--main_color);
 }
 
+/*Scroll css*/
+.scroll{
+    height: 40px;
+    width: 40px;
+    background: var(--main_color);
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    transform: translatex(-50%);
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+.scroll a{
+    color: #fff;
+}
+
+/* Home page start */
 /*Top Header part css*/
 #top_header{
     background-color: var(--main_color);
@@ -127,7 +166,7 @@ p{
     margin: 0 10px;
     position: relative;
 }
-.header_right ul li a{
+.header_right ul li a{ 
     height: 25px;
     width: 25px;
     line-height: 25px;
@@ -283,6 +322,7 @@ p{
     background: #e7e7e7;
     top: 0;
     z-index: 999;
+    border-bottom: 5px solid var(--main_color);
 }
 
 /*Banner part css*/
@@ -622,9 +662,8 @@ p{
 .blog_slider .col-lg-4{
     margin: 0 15px;
 }
-.slick-center .blog_itmes:hover .blog_img .img_overlay {
+.slick-center .blog_itmes .blog_img .img_overlay {
     height: 100%;
-    opacity: 1;
 }
 .img_overlay {
     position: absolute;
@@ -634,7 +673,6 @@ p{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
     text-align: center;
-    opacity: 0;
     transition: 0.5s;
 }
 .img_overlay a i {
@@ -653,9 +691,9 @@ p{
     transform: translateY(-50%) translateX(-50%);
 }
 .img_overlay a i:hover {
-    color: #ffca36;
+    color: var(--main_color);
     background-color: transparent;
-    border-color: #ffca36
+    border-color: var(--main_color);
 }
 .blog_content h3 {
     font-size: 18px;
@@ -851,13 +889,11 @@ p{
     font-weight: 400;
     margin: 25px 0 50px 0;
 }
-
 .footer_col ul li span {
     font-size: 14px;
     color: #ddd;
     font-weight: 400;
 }
-
 .address_list li i {
     height: 35px;
     width: 35px;
@@ -896,19 +932,22 @@ p{
     color: var(--main_color);
     margin-left: 5px;
 }
-
 .latest_news h3{
     padding-top: 20px;
     color: #fff;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
-.latest_items_txt{
-    float: right;
+.latest_items{
+    height: 80px;
+    display: flex;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 .latest_items_txt h5 {
     font-size: 14px;
     color: #fff;
+    font-weight: 400;
     margin: 0;
 }
 .latest_items_txt p {
@@ -920,7 +959,7 @@ p{
 }
 .latest_items_txt ul li {
     float: left;
-    padding-right: 5px;
+    padding-right: 15px;
 }
 .latest_items_txt ul li:last-child {
     padding-right: 0;
@@ -929,14 +968,26 @@ p{
     font-size: 13px;
     font-weight: 400;
     color: #fff;
-    padding-left: 2px;
-    transition: all 0.3s linear;
+    padding-left: 3px;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
 }
-.latest_items_txt ul li a span:hover {
+.latest_items_txt ul li a:hover,
+.latest_items_txt ul li a:hover span{
     color: #ffca36
+}
+.latest_items_txt ul li a{
+    color: #fff;
+    font-size: 13px;
 }
 .latest_items_img {
     margin-right: 10px;
+}
+.latest_items_img a{
+    display: inline-block;
 }
 
 /*Bottom Footer part css*/
@@ -960,33 +1011,225 @@ p{
     color: var(--main_color);
     font-family: 'Open Sans', sans-serif;
 }
+/* Home page end */
 
-/*Scroll css*/
-.scroll{
-    height: 40px;
-    width: 40px;
-    background: var(--main_color);
-    position: fixed;
-    right: 0;
-    bottom: 20px;
-    transform: translatex(-50%);
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-    display: none;
-    z-index: 999;
+/* About Us page start */
+/* About Banner part css */
+#about_banner .banner_items{
+    height: 300px;
 }
-.scroll a{
+.about_banner_content{
+    padding-top: 105px;
+}
+.about_banner_content h2{
+    color: #fff;
+    font-size: 35px;
+}
+.about_banner_content ul li{
+    display: inline-block;
+    padding: 5px;
+}
+.about_banner_content ul li a{
+    color: #fff;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.about_banner_content ul li:nth-last-child(2):hover a{
     color: #fff;
 }
-
-/* preloader css start */
-#preloader{
-    background: #fff url(../Images/preloader.gif) no-repeat center center;
-    background-size: 20%;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 9999;
+.about_banner_content ul li:hover a,
+.about_banner_content .active a{
+    color: var(--main_color);
 }
-/* preloader css end */
+/* About Produstry part css */
+#about{
+    padding: 100px 0;
+}
+#about .about_left{
+    background: url(../Images/aboutuspage_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: right;
+    position: relative;
+    height: 350px;
+    z-index: 1;
+}
+#about .about_left:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+#about .about_left img {
+    margin-right: -126px;
+    margin-top: -29px;
+}
+#about h2{
+    padding: 0 0 35px 30px;
+}
+#about .about_right p{
+    font-size: 14px;
+    padding: 10px 0 10px 30px;
+}
+/* Our Mission part css */
+#mission{
+    padding-bottom: 100px;
+}
+#mission .about_left{
+    background: url(../Images/aboutuspage_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: left;
+    position: relative;
+    height: 350px;
+    z-index: 1;
+}
+#mission .about_left:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+#mission .about_left img {
+    margin-left: -126px;
+    margin-top: -31px;
+}
+#mission h2{
+    padding-bottom: 40px;
+}
+#mission .about_right p{
+    font-size: 14px;
+    padding: 10px 0;
+}
+#mission .about_right ul{
+    border-bottom: none;
+}
+#mission .about_right ul li{
+    padding: 9px 0 9px 30px;
+}
+#mission .about_right ul li span{
+    font-size: 14px;
+    color: #555555;
+}
+#mission .about_right i{
+    font-size: 14px;
+    color: var(--main_color);
+    padding-right: 10px;
+}
+
+/* Our Team part css */
+#about_team{
+    padding-bottom:  120px;
+}
+#about_team .section_header p{
+    padding-bottom: 50px;
+}
+.team_items{
+    height:  530px;
+    padding:  0 10px;
+}
+.team_img{
+    background: #f1f1f1;
+    padding-top: 10px;
+    height:  380px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+    overflow: hidden;
+}
+.team_img img{
+    height: 100%;
+    padding:  0 50px;
+}
+.team_text{
+    background:  var(--second_color);
+    height: 130px;
+    margin-top: -30px;
+    clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+    position: relative;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+.team_text .team_icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.team_text h3{
+    color:  #fff;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.team_text p{
+    color:  #fff;
+    font-size: 14px;
+}
+.team_text ul{
+    padding-bottom: 0;
+    display:  none;
+}
+.team_text ul li{
+    float: left;
+    padding-right: 5px;
+    margin-top: 25px;
+}
+.team_text ul li a i{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: #fff;
+    background:  var(--second_color);
+    border:  1px solid transparent;
+    transition:  .5s;
+    -webkit-transition:  .5s;
+    -moz-transition:  .5s;
+    -ms-transition:  .5s;
+    -o-transition:  .5s;
+}
+.team_text ul li a i:hover{
+    background: transparent;
+    color:  var(--second_color);
+    border-color:  var(--second_color);
+}
+.slick-center .team_text{
+    background:  var(--main_color);
+    height: 180px;
+    clip-path: polygon(0% 21%, 100% 0%, 100% 100%, 0% 100%);
+}
+.slick-center .team_text ul{
+    display:  block;
+}
+.slick-center .team_img{
+    height: 350px;
+}
+.slick-center .team_text .team_icon {
+    transform: translateY(-50%) translateX(-50%);
+}
+
+
+/* About Us page end */
