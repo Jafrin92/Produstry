@@ -119,12 +119,11 @@ $(function($){
   //blog slider
   $('.blog_slider').slick({
     infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    prevArrow: '<i class="fa-solid banner_arrow_left fa-angle-left"></i>',
-    nextArrow: '<i class="fa-solid banner_arrow_right fa-angle-right"></i>',
-    speed: 300,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
+    prevArrow: '.blogicon_left',
+    nextArrow: '.blogicon_right',
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
@@ -162,11 +161,11 @@ $(function($){
         asNavFor:".testimonial_img_slide",
       });
       $('.testimonial_img_slide').slick({
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed:3000,
+        prevArrow: '.testimonial_left',
+        nextArrow: '.testimonial_right',
         slidesToShow: 3,
         centerMode: true,
+        speed: 500,
         centerPadding: '0px',
         asNavFor:".testimonial_text_slider",
       });
@@ -174,12 +173,10 @@ $(function($){
 //brand js
       $('.brand_slick').slick({
         infinite: true,
-        autoplay: true,
-        arrows: true,
-        prevArrow: '<i class="fa-solid banner_arrow_left fa-angle-left"></i>',
-        nextArrow: '<i class="fa-solid banner_arrow_right fa-angle-right"></i>',
+        prevArrow: '.brand_left',
+        nextArrow: '.brand_right',
         dots: false,
-        speed: 3000,
+        speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
@@ -217,8 +214,8 @@ $(function($){
 $('.team_slider').slick({
   infinite: true,
   arrows: true,
-  prevArrow: '<i class="fa-solid banner_arrow_left fa-angle-left"></i>',
-  nextArrow: '<i class="fa-solid banner_arrow_right fa-angle-right"></i>',
+  prevArrow: '.team_left',
+  nextArrow: '.team_right',
   speed: 300,
   centerMode: true,
   centerPadding: '0',

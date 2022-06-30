@@ -1,4 +1,3 @@
-
 /*
 Template Name: Produstry.
 Author: Naima Nusrat.
@@ -25,6 +24,9 @@ ____About Us_____
 2. About Produstry part.
 3. Our Mission part.
 4. Our Team part.
+
+___Portfolio page____
+1. Our Portfolio part.
 */
 *{
     margin: 0;
@@ -89,40 +91,126 @@ p{
 }
 /* preloader css end */
 
-/* slider arrows */
-.banner_arrow_left,
-.banner_arrow_right{
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 30px;
-    color: var(--second_color);
-    cursor: pointer;
-    border: 1px solid var(--second_color);
+/* Common arrow css */
+#about_team .slidr_icon,
+#brand .slidr_icon,
+#testimonial .slidr_icon,
+#home_blog .slidr_icon{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    left: 0px;
     z-index: 99;
+    width: 100%;
+}
+#about_team .arrow_left,
+#brand .arrow_left,
+#testimonial .arrow_left,
+#home_blog .arrow_left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#about_team .arrow_right,
+#brand .arrow_right,
+#testimonial .arrow_right,
+#home_blog .arrow_right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#about_team .slidr_icon .icon,
+#brand .slidr_icon .icon,
+#home_blog .slidr_icon .icon{
+    color: var(--second_color);
+}
+#testimonial .slidr_icon .icon a{
+    color: #fff;
+}
+.slidr_icon .icon{
+    color: var(--second_color);
+    position: relative;
+}
+.slidr_icon .icon i{
+    font-size: 18px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.slidr_icon .icon a{
     transition: all linear .5s;
     -webkit-transition: all linear .5s;
     -moz-transition: all linear .5s;
     -ms-transition: all linear .5s;
     -o-transition: all linear .5s;
 }
-.banner_arrow_left{
-    left: 0;
-    margin: 0 -100px;
-}
-.banner_arrow_right{
-    right: 0;
-    margin: 0 -100px;
-}
-.banner_arrow_left:hover,
-.banner_arrow_right:hover{
+#testimonial .slidr_icon .icon:hover a,
+.slidr_icon .icon:hover a{
     color: var(--main_color);
-    border-color: var(--main_color);
 }
+#testimonial .slidr_icon .icon::after,
+#testimonial .slidr_icon .icon::before{
+    background: #fff;
+}
+.slidr_icon .icon::after,
+.slidr_icon .icon::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: calc(100% + 10px);
+    background: var(--second_color);
+    top: -5px;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.slidr_icon .icon::after{
+    right: 0;
+}
+.slidr_icon .icon::before{
+    left: 0;
+}
+#testimonial .slidr_icon a::after,
+#testimonial .slidr_icon a::before{
+    background: #fff;
+}
+.slidr_icon a::after,
+.slidr_icon a::before{
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: calc(100% + 10px);
+    background: var(--second_color);
+    left: -5px;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.slidr_icon a::after{
+    top: 0;
+}
+.slidr_icon a::before{
+    bottom: 0;
+}
+#testimonial .slidr_icon .icon:hover:after,
+#testimonial .slidr_icon .icon:hover:before,
+#testimonial .slidr_icon .icon:hover a::after,
+#testimonial .slidr_icon .icon:hover a::before,
+.slidr_icon .icon:hover:after,
+.slidr_icon .icon:hover:before,
+.slidr_icon .icon:hover a::after,
+.slidr_icon .icon:hover a::before{
+    background: var(--main_color);
+}
+/* Common arrow css end*/
 
 /*Scroll css*/
 .scroll{
@@ -142,6 +230,8 @@ p{
 .scroll a{
     color: #fff;
 }
+/* -----common css end------ */
+
 
 /* Home page start */
 /*Top Header part css*/
@@ -385,22 +475,17 @@ p{
     background: var(--main_color);
     z-index: -1;
     transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
 }
 .banner_content a:hover {
     color: var(--second_color);
-    border-color: #ffca36;
+    border-color: var(--main_color);
 }
 .banner_content a:hover:before{
     left: 0;
-}
-.slider_arrow .swiper-button-prev,
-.slider_arrow .swiper-button-next {
-    color: #fff;
-    cursor: pointer;
-}
-.slider_arrow .swiper-button-prev:hover,
-.slider_arrow .swiper-button-next:hover{
-    color: var(--main_color);
 }
 #home_banner .swiper-scrollbar{
     background: var(--main_color);
@@ -412,6 +497,79 @@ p{
   width: 100%;
   height: 700px;
 }
+/* banner arrow css start */
+.swiper_arrow{
+    position: relative;
+    z-index: 999;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.swiper_arrow .banner_arrow{
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.swiper_arrow .banner_arrow:hover{
+    color: var(--main_color);
+}
+.swiper_arrow .banner_arrow::after,
+.swiper_arrow .banner_arrow::before{
+    position: absolute;
+    content: '';
+    background: #fff;
+    width: calc(100% + 10px);
+    height: 1px;
+    left: -5px;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.swiper_arrow .banner_arrow::after{
+    top: 0;
+}
+.swiper_arrow .banner_arrow::before{
+    bottom: 0;
+}
+.swiper_arrow .banner_arrow span::after,
+.swiper_arrow .banner_arrow span::before{
+    position: absolute;
+    content: '';
+    background: #fff;
+    height: calc(100% + 10px);
+    width: 1px;
+    top: -5px;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.swiper_arrow .banner_arrow span::after{
+    right: 0;
+}
+.swiper_arrow .banner_arrow span::before{
+    left: 0;
+}
+.swiper_arrow .banner_arrow:hover span::after,
+.swiper_arrow .banner_arrow:hover span::before,
+.swiper_arrow .banner_arrow:hover::after,
+.swiper_arrow .banner_arrow:hover::before{
+    background: var(--main_color);
+}
+/* banner arrow css end */
 
 /* our services css */
 #services{
@@ -615,7 +773,8 @@ p{
 
 /*Our Blog part css*/
 #home_blog{
-    padding: 100px 0;
+    padding: 80px 0;
+    position: relative;
 }
 .blog_itmes{
     position: relative;
@@ -653,9 +812,6 @@ p{
     transform: translateY(-80px);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
-.blog_slider{
-    padding: 50px 0;
-}
 .blog_slider .slick-track{
     padding: 170px 0;
 }
@@ -664,17 +820,20 @@ p{
 }
 .slick-center .blog_itmes .blog_img .img_overlay {
     height: 100%;
+    opacity: 1;
 }
 .img_overlay {
     position: absolute;
     left: 0;
     top: 0;
-    height: 0%;
+    height: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
     text-align: center;
+    opacity: 0;
     transition: 0.5s;
 }
+
 .img_overlay a i {
     height: 40px;
     width: 40px;
@@ -724,6 +883,7 @@ p{
 /* testimonial css */
 #testimonial{
     padding-bottom: 50px;
+    position: relative;
 }
 #testimonial .section_heading {
     padding-bottom: 50px;
@@ -771,6 +931,7 @@ p{
     display: inline-block;
     height: 70px;
     width: 70px;
+    opacity: .6;
 }
 .testimonial_img.slick-center{
     transform: scale(1.5);
@@ -782,6 +943,7 @@ p{
     border: 1px solid var(--main_color);
     border-radius: 50%;
     padding: 2px;
+    opacity: 1;
 }
 
 /*Brand css*/
@@ -1046,6 +1208,7 @@ p{
 .about_banner_content .active a{
     color: var(--main_color);
 }
+
 /* About Produstry part css */
 #about{
     padding: 100px 0;
@@ -1080,6 +1243,7 @@ p{
     font-size: 14px;
     padding: 10px 0 10px 30px;
 }
+
 /* Our Mission part css */
 #mission{
     padding-bottom: 100px;
@@ -1133,6 +1297,7 @@ p{
 /* Our Team part css */
 #about_team{
     padding-bottom:  120px;
+    position: relative;
 }
 #about_team .section_header p{
     padding-bottom: 50px;
@@ -1203,8 +1368,8 @@ p{
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     color: #fff;
+    cursor: pointer;
     background:  var(--second_color);
-    border:  1px solid transparent;
     transition:  .5s;
     -webkit-transition:  .5s;
     -moz-transition:  .5s;
@@ -1212,14 +1377,12 @@ p{
     -o-transition:  .5s;
 }
 .team_text ul li a i:hover{
-    background: transparent;
-    color:  var(--second_color);
-    border-color:  var(--second_color);
+    background: #0077b5;
 }
 .slick-center .team_text{
     background:  var(--main_color);
     height: 180px;
-    clip-path: polygon(0% 21%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 21%, 100% 2%, 100% 100%, 0% 100%);
 }
 .slick-center .team_text ul{
     display:  block;
@@ -1230,6 +1393,29 @@ p{
 .slick-center .team_text .team_icon {
     transform: translateY(-50%) translateX(-50%);
 }
-
-
 /* About Us page end */
+
+/*Our Portfolio page start */
+#portfolio{
+    padding: 70px 0;
+}
+#portfolio .portfolio_items{
+    margin-bottom: 70px;
+}
+.portfolio_btn a{
+    background: var(--main_color);
+    color: #353535;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all linear .5s;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+}
+.portfolio_btn a:hover{
+    background: #e6e6e6;
+}
+/*Our Portfolio page end */
