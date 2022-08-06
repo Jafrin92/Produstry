@@ -119,8 +119,8 @@ $(function($){
   //blog slider
   $('.blog_slider').slick({
     infinite: true,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     prevArrow: '.blogicon_left',
     nextArrow: '.blogicon_right',
     speed: 500,
@@ -135,7 +135,6 @@ $(function($){
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: true,
-                
             }
 },
         {
@@ -165,6 +164,8 @@ $(function($){
         nextArrow: '.testimonial_right',
         slidesToShow: 3,
         centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
         speed: 500,
         centerPadding: '0px',
         asNavFor:".testimonial_text_slider",
@@ -177,6 +178,8 @@ $(function($){
         nextArrow: '.brand_right',
         dots: false,
         speed: 500,
+        autoplay: true,
+        autoplaySpeed: 3000,
         slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
@@ -185,13 +188,19 @@ $(function($){
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 5,
                     slidesToScroll: 1,
                     infinite: true,
-                   
                 }
     },
             {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+    },
+              {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
